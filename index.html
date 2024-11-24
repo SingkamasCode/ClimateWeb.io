@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Home</title>
+  <link rel="stylesheet" href="output.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+  <style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    :root {
+      --wheel-size: 80vw; 
+    }
+
+    @media (min-width: 768px) {
+      :root {
+        --wheel-size: 600px; 
+      }
+    }
+
+    .wheel {
+      width: var(--wheel-size);
+      height: var(--wheel-size);
+      border-radius: 50%;
+      position: relative;
+      border: 12px solid #42b748; 
+      overflow: hidden;
+      transform: rotate(0deg); 
+      transition: transform 0.5s ease-out;
+    }
+
+    .wheel-section {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      top: 50%;
+      left: 50%;
+      transform-origin: 0 0;
+      text-align: center;
+      font-size: calc(var(--wheel-size) / 12);
+      line-height: calc(var(--wheel-size) / 4);
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+
+    .section-1 { background-color: #f87171; transform: rotate(0deg) translate(-100%, -100%); }
+    .section-2 { background-color: #fbbf24; transform: rotate(90deg) translate(-100%, -100%); }
+    .section-3 { background-color: #34d399; transform: rotate(180deg) translate(-100%, -100%); }
+    .section-4 { background-color: #60a5fa; transform: rotate(270deg) translate(-100%, -100%); }
+
+    .nav-btn {
+        background-color: #05aeed;
+        color: white;
+    }
+
+    .wave {
+        position: absolute;
+        bottom: 0;
+    }
+
+    #spinLeft, #spinRight {
+      transition: background-color 0.3s ease;
+    }
+
+    .wheel {
+        position: absolute;
+        bottom: -170px;
+    }
+
+  </style>
+</head>
+<body class="bg-sky-50">
+    <!--
+    <header class="relative py-8 px-10 flex items-center">
+        <h1 class="absolute left-10">TITLE</h1>
+        
+        <nav class="absolute inset-x-0 text-center">
+          <ul class="inline-flex gap-10">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Article</a></li>
+            <li><a href="#">Activities</a></li>
+            <li><a href="#">Multimedia</a></li>
+          </ul>
+        </nav>
+    </header>
+      -->
+    <main >
+        <div class="hero flex relative bg-cover bg-center bg-no-repeat overflow-hidden" style="background-image: url('bg1.jpg');">
+
+            <div class="hero-1 w-7/12 flex flex-col items-center justify-center p-60 ">
+                <h1 class="text-5xl font-bold mb-5">Kodable can help any kid learn to code</h1>
+                <p class="text-xl">Our suite of engaging learning games empower children to develop essential skills to prepare them for their digital future. Start Coding Today!</p>
+                <button class="px-6 py-2 mt-5 font-bold text-white bg-sky-500 rounded-xl border-4 border-sky-500">Learn more →</button>
+            </div>
+            
+            <div>
+                <div id="wheel" class="wheel">
+                    <a href="#section1" class="wheel-section section-1">About</a>
+                    <a href="#section2" class="wheel-section section-2"> Article</a>
+                    <a href="#section3" class="wheel-section section-3">Activities</a>
+                    <a href="#section4" class="wheel-section section-4">Multimedia</a>
+                </div>
+            
+                <div class="mt-6">
+                    <button id="spinLeft" class="px-4 py-2 text-white bg-green-500 rounded shadow hover:bg-green-600">Spin Left</button>
+                    <button id="spinRight" class="px-4 py-2 ml-4 text-white bg-blue-500 rounded shadow hover:bg-blue-600">Spin Right</button>
+                </div>
+            </div>
+
+            <!-- Wave SVG 
+            <svg class="wave w-full h-[50px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+              <path fill="#0099ff" fill-opacity="1" d="M0,160L60,144C120,128,240,96,360,112C480,128,600,192,720,197.3C840,203,960,149,1080,128C1200,107,1320,117,1380,122.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+            </svg> -->
+
+          <svg id="wave"  class="w-full h-[125px]  absolute bottom-0" style="transform:rotate(0deg); transition: 0.3s;" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(216.052, 233.228, 255, 1)" offset="0%" /><stop stop-color="rgba(0, 172.927, 255, 1)" offset="100%" /></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,40L17.1,33.3C34.3,27,69,13,103,16.7C137.1,20,171,40,206,43.3C240,47,274,33,309,31.7C342.9,30,377,40,411,41.7C445.7,43,480,37,514,33.3C548.6,30,583,30,617,36.7C651.4,43,686,57,720,56.7C754.3,57,789,43,823,40C857.1,37,891,43,926,50C960,57,994,63,1029,58.3C1062.9,53,1097,37,1131,26.7C1165.7,17,1200,13,1234,25C1268.6,37,1303,63,1337,65C1371.4,67,1406,43,1440,36.7C1474.3,30,1509,40,1543,38.3C1577.1,37,1611,23,1646,26.7C1680,30,1714,50,1749,63.3C1782.9,77,1817,83,1851,80C1885.7,77,1920,63,1954,56.7C1988.6,50,2023,50,2057,48.3C2091.4,47,2126,43,2160,40C2194.3,37,2229,33,2263,31.7C2297.1,30,2331,30,2366,38.3C2400,47,2434,63,2451,71.7L2468.6,80L2468.6,100L2451.4,100C2434.3,100,2400,100,2366,100C2331.4,100,2297,100,2263,100C2228.6,100,2194,100,2160,100C2125.7,100,2091,100,2057,100C2022.9,100,1989,100,1954,100C1920,100,1886,100,1851,100C1817.1,100,1783,100,1749,100C1714.3,100,1680,100,1646,100C1611.4,100,1577,100,1543,100C1508.6,100,1474,100,1440,100C1405.7,100,1371,100,1337,100C1302.9,100,1269,100,1234,100C1200,100,1166,100,1131,100C1097.1,100,1063,100,1029,100C994.3,100,960,100,926,100C891.4,100,857,100,823,100C788.6,100,754,100,720,100C685.7,100,651,100,617,100C582.9,100,549,100,514,100C480,100,446,100,411,100C377.1,100,343,100,309,100C274.3,100,240,100,206,100C171.4,100,137,100,103,100C68.6,100,34,100,17,100L0,100Z"></path></svg>
+
+        </div>
+
+
+        <!--MAIN CONTENT-->
+
+        <div>
+            <div class="flex flex-col items-center justify-center px-64 py-24   text-center bg-[#d4e8ff]">
+                <h1 class="text-4xl font-bold">Games that build confidence, bit by bit</h1>
+                <p class="mt-5 text-lg">With the help of their bilingual coding tutor CatBot, kids learn core programming concepts through engaging games developed with real teachers and kids. Kodable is trusted by educators, and it can be used both in school and at home.</p>
+                <div class="card mt-12 flex flex-row gap-16">
+                    <div class="w-80 h-[25rem] bg-red-300 rounded-2xl">box1</div>
+                    <div class="w-80 h-[25rem] bg-blue-300 rounded-2xl">box1</div>
+                    <div class="w-80 h-[25rem] bg-green-300 rounded-2xl">box1</div>
+                </div>
+
+                <button class="px-6 py-2 mt-12 font-bold text-white bg-sky-500 rounded-xl border-4 border-sky-500">Learn more</button>
+              
+            </div>
+
+            <!--FACTS -->
+            <div class="relative facts flex justify-center items-center bg-white gap-20 pt-20">
+                <svg id="wave" class="w-full h-[125px] absolute top-0" style="transform:rotate(180deg); transition:0.3s;" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(216.052, 233.228, 255, 1)" offset="0%"></stop><stop stop-color="rgba(0, 172.927, 255, 1)" offset="100%"></stop></linearGradient></defs><path fill="url(#sw-gradient-0)" d="M0,40L17.1,33.3C34.3,27,69,13,103,16.7C137.1,20,171,40,206,43.3C240,47,274,33,309,31.7C342.9,30,377,40,411,41.7C445.7,43,480,37,514,33.3C548.6,30,583,30,617,36.7C651.4,43,686,57,720,56.7C754.3,57,789,43,823,40C857.1,37,891,43,926,50C960,57,994,63,1029,58.3C1062.9,53,1097,37,1131,26.7C1165.7,17,1200,13,1234,25C1268.6,37,1303,63,1337,65C1371.4,67,1406,43,1440,36.7C1474.3,30,1509,40,1543,38.3C1577.1,37,1611,23,1646,26.7C1680,30,1714,50,1749,63.3C1782.9,77,1817,83,1851,80C1885.7,77,1920,63,1954,56.7C1988.6,50,2023,50,2057,48.3C2091.4,47,2126,43,2160,40C2194.3,37,2229,33,2263,31.7C2297.1,30,2331,30,2366,38.3C2400,47,2434,63,2451,71.7L2468.6,80L2468.6,100L2451.4,100C2434.3,100,2400,100,2366,100C2331.4,100,2297,100,2263,100C2228.6,100,2194,100,2160,100C2125.7,100,2091,100,2057,100C2022.9,100,1989,100,1954,100C1920,100,1886,100,1851,100C1817.1,100,1783,100,1749,100C1714.3,100,1680,100,1646,100C1611.4,100,1577,100,1543,100C1508.6,100,1474,100,1440,100C1405.7,100,1371,100,1337,100C1302.9,100,1269,100,1234,100C1200,100,1166,100,1131,100C1097.1,100,1063,100,1029,100C994.3,100,960,100,926,100C891.4,100,857,100,823,100C788.6,100,754,100,720,100C685.7,100,651,100,617,100C582.9,100,549,100,514,100C480,100,446,100,411,100C377.1,100,343,100,309,100C274.3,100,240,100,206,100C171.4,100,137,100,103,100C68.6,100,34,100,17,100L0,100Z"></path></svg>
+
+                <div class="pt-24 py-16 flex justify-center items-center ">
+                    <img src="climate.png"class="h-[26rem]" >
+                </div>
+
+                <div class=" flex flex-col justify-center items-left max-w-lg">
+                    <h1 class="text-5xl font-bold mb-3 font-coiny">Climate Change</h1>
+                    <p>Climate change is driven by human activities, particularly the burning of fossil fuels, which release greenhouse gases into the atmosphere. This has caused global temperatures to rise by about 1.2°C since the late 19th century. Melting ice caps and glaciers are contributing to rising sea levels, while the oceans are warming and becoming more acidic, affecting marine life. The impacts include more frequent extreme weather events, threatening ecosystems, food security, and human health.</p>
+                </div>
+            </div>
+
+            <div class="card flex flex-col items-center bg-white py-16">
+              <h1 class="text-center font-coiny text-4xl mb-20">How Climate Change Works</h1>
+  
+                <div class="flex justify-center flex-row gap-16">
+
+                  <div class="relative w-56 h-[30rem] p-7 bg-[#72baf5] rounded-full flex justify-center">
+                    <div class=" flex flex-col justify-between items-center">
+                        <div id="text" class="text-center invisible"><h1 class="font-bold">Melting Ice</h1><p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p></div>
+                        <div class="w-[.40rem] h-[55%] rounded-full bg-white"></div>
+                        <div id="text" class="text-center "><h1 class="font-bold">Greenhouse Gas Emissions</h1><p class="text-sm">Burning fossil fuels releases gases that trap heat in the atmosphere.</p></div>
+                    </div>
+                    <div class="absolute top-[-30px] flex justify-center items-center text-white font-bold h-28 w-28 rounded-full bg-[#fdcd56] text-4xl font-coiny">1</div>
+                  </div>
+                  
+                  <div class="relative w-56 h-[30rem] p-7 bg-[#72baf5] rounded-full flex justify-center">
+                    <div class=" flex flex-col justify-between items-center">
+                        <div id="text" class="text-center "><h1 class="font-bold">Global Warming</h1><p class="text-sm">Trapped heat raises Earth's temperature, causing global warming.</p></div>
+                        <div class="w-[.40rem] h-[55%] rounded-full bg-white"></div>
+                        <div id="text" class="text-center invisible"><h1 class="font-bold">Melting Ice</h1><p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p></div>
+                    </div>
+                    <div class="absolute bottom-[-30px] flex justify-center items-center text-white font-bold h-28 w-28 rounded-full bg-[#fdcd56] text-4xl font-coiny">2</div>
+                </div>
+
+                  <div class="relative w-56 h-[30rem] p-7 bg-[#72baf5] rounded-full flex justify-center">
+                    <div class=" flex flex-col justify-between items-center">
+                        <div id="text" class="text-center invisible"><h1 class="font-bold">Melting Ice</h1><p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p></div>
+                        <div class="w-[.40rem] h-[55%] rounded-full bg-white"></div>
+                        <div id="text" class="text-center "><h1 class="font-bold">Melting Ice</h1><p class="text-sm">Higher temperatures melt ice, raising sea levels over time.</p></div>
+                    </div>
+                      <div class="absolute top-[-30px] flex justify-center items-center text-white font-bold h-28 w-28 rounded-full bg-[#fdcd56] text-4xl font-coiny">3</div>
+                  </div>
+
+                  <div class="relative w-56 h-[30rem] p-7 bg-[#72baf5] rounded-full flex justify-center">
+                    <div class=" flex flex-col justify-between items-center">
+                        <div id="text" class="text-center "><h1 class="font-bold">Extreme Weather</h1><p class="text-sm">Climate change brings more storms, droughts, and heatwaves.</p></div>
+                        <div class="w-[.40rem] h-[55%] rounded-full bg-white"></div>
+                        <div id="text" class="text-center invisible"><h1 class="font-bold">Melting Ice</h1><p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p></div>
+                    </div>
+                    <div class="absolute bottom-[-30px] flex justify-center items-center text-white font-bold h-28 w-28 rounded-full bg-[#fdcd56] text-4xl font-coiny">4</div>
+                </div>
+                  
+                  <div class="relative w-56 h-[30rem] p-7 bg-[#72baf5] rounded-full flex justify-center">
+                    <div class=" flex flex-col justify-between items-center">
+                        <div id="text" class="text-center invisible"><h1 class="font-bold">Melting Ice</h1><p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p></div>
+                        <div class="w-[.40rem] h-[55%] rounded-full bg-white"></div>
+                        <div id="text" class="text-center "><h1 class="font-bold">Ecosystem Disruption</h1><p class="text-sm">Rising temperatures alter habitats, affecting plant </p></div>
+                    </div>
+                    <div class="absolute top-[-30px] flex justify-center items-center text-white font-bold h-28 w-28 rounded-full bg-[#fdcd56] text-4xl font-coiny">5</div>
+                  </div>
+
+                </div> <!--END NG CLIMATE CHANGE WORKS-->
+            </div>
+
+            <div class="facts  flex justify-center items-center bg-white gap-20">
+                <div class=" flex flex-col justify-center items-left max-w-lg">
+                    <p>Climate change is driven by human activities, particularly the burning of fossil fuels since the late 19th century. Melting ice caps  while the oceans are warming and becoming more acidic, affecting marine life. The impacts include more frequent extreme weather.</p>
+                </div>
+
+                <div class="py-16 flex justify-center items-center ">
+                    <img src="climate.png" class="h-[26rem]">
+                </div>
+            </div>
+
+            <!--ACTIVITIES-->
+
+            <div class="h-[40rem] bg-cover bg-no-repeat flex items-center justify-center flex-col" style="background-image: url('bg3.jpg'); background-position: 50% 80%;">
+                
+                <div class="flex items-center justify-center gap-28">
+                    <div class="h-44 w-44 rounded-full bg-yellow-500 flex items-center justify-center text-center text-white font-bold text-3xl transform transition-transform duration-300 hover:scale-125">GRADE<br>1</div>
+                    <div class="h-44 w-44 rounded-full bg-red-500 flex items-center justify-center text-center text-white font-bold text-3xl transform transition-transform duration-300 hover:scale-125">GRADE<br>2</div>
+                    <div class="h-44 w-44 rounded-full bg-blue-500 flex items-center justify-center text-center text-white font-bold text-3xl transform transition-transform duration-300 hover:scale-125">GRADE<br>3</div>
+                    <div class="h-44 w-44 rounded-full bg-green-500 flex items-center justify-center text-center text-white font-bold text-3xl transform transition-transform duration-300 hover:scale-125">GRADE<br>4</div>
+                    <div class="h-44 w-44 rounded-full bg-violet-500 flex items-center justify-center text-center text-white font-bold text-3xl transform transition-transform duration-300 hover:scale-125">GRADE<br>5</div> 
+                </div>
+                
+            </div>
+
+            
+
+
+
+        </div>
+
+
+
+    </main>
+
+
+    <script>
+      const wheel = document.getElementById('wheel');
+      let currentRotation = 0;
+
+  
+      document.getElementById('spinLeft').addEventListener('click', () => {
+        currentRotation -= 90; 
+        wheel.style.transition = "transform 1s ease-in-out"; 
+        wheel.style.transform = `rotate(${currentRotation}deg)`; 
+      });
+
+      // Spin Right Button
+      document.getElementById('spinRight').addEventListener('click', () => {
+        currentRotation += 90; // Rotate right by 90°
+        wheel.style.transition = "transform 1s ease-in-out"; // Smooth transition
+        wheel.style.transform = `rotate(${currentRotation}deg)`; // Apply the rotation to the wheel
+      });
+    </script>
+</body>
+</html>
