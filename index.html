@@ -258,11 +258,10 @@
         wheel.style.transform = `rotate(${currentRotation}deg)`; 
       });
 
-      // Spin Right Button
       document.getElementById('spinRight').addEventListener('click', () => {
-        currentRotation += 90; // Rotate right by 90°
-        wheel.style.transition = "transform 1s ease-in-out"; // Smooth transition
-        wheel.style.transform = `rotate(${currentRotation}deg)`; // Apply the rotation to the wheel
+        currentRotation += 90; 
+        wheel.style.transition = "transform 1s ease-in-out"; 
+        wheel.style.transform = `rotate(${currentRotation}deg)`; 
       });
     </script>
 </body>
